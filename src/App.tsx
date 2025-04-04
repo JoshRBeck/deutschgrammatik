@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen p-4">
+      <main className="min-h-screen p-4 bg-violet-50">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Lessons" element={<Lessons />} />

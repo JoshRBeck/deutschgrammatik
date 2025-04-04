@@ -15,6 +15,7 @@ const LessonsList = () => {
 
   useEffect(() => {
     const fetchLessons = async () => {
+      console.log("Fetching Lessons...");
       const { data, error } = await supabase.from("lessons").select("*");
 
       if (error) console.error("Error fetching lessons:", error);
