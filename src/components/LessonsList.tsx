@@ -27,14 +27,17 @@ const LessonsList = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto">
+      <h1 className="text-3xl font-extrabold text-violet-800 tracking-tight mb-6 text-center">
         German Grammar Lessons
       </h1>
+
       {loading ? (
-        <p className="text-gray-800">Loading lessons...</p>
+        <p className="text-center text-gray-600 text-lg">Loading lessons...</p>
+      ) : lessons.length === 0 ? (
+        <p className="text-center text-gray-600 text-lg">No lessons found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {lessons.map((lesson) => (
             <LessonCard key={lesson.id} {...lesson} />
           ))}

@@ -7,9 +7,11 @@ interface LessonCardProps {
 
 const LessonCard: React.FC<LessonCardProps> = ({ title, content }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md p-4 border border-gray-200">
-      <h2 className="text-lg font-semibold text-gray-800 mb-2">{title}</h2>
-      <p className="text-gray-600">{content}</p>
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl">
+      <h2 className="text-xl font-bold text-violet-700 tracking-wide mb-3">
+        {title}
+      </h2>
+      <p className="text-gray-700 leading-relaxed">{content}</p>
     </div>
   );
 };
