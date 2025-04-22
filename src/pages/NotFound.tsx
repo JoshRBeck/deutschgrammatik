@@ -15,12 +15,14 @@ export default function NotFound({ isDark }: NotFoundProps) {
         }
       `}
     >
-      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-lg w-full">
-        <h1 className="text-5xl font-extrabold text-red-600 dark:text-red-400 mb-4">
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl max-w-lg w-full">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-red-600 dark:text-red-400 mb-4">
           404
         </h1>
-        <h2 className="text-2xl font-semibold mb-2">Oops! Page not found.</h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-2">
+          Oops! Page not found.
+        </h2>
+        <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6">
           The page you’re looking for doesn’t seem to exist.
         </p>
         <Link

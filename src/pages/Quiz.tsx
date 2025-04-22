@@ -5,7 +5,7 @@ interface QuizPageProps {
 export default function Quiz({ isDark }: QuizPageProps) {
   return (
     <div
-      className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 px-6 text-center
+      className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 px-4 sm:px-6 text-center
         ${
           isDark
             ? "bg-gradient-to-br from-violet-900 to-pink-900 text-white"
@@ -14,12 +14,12 @@ export default function Quiz({ isDark }: QuizPageProps) {
       `}
     >
       <div
-        className={`bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-xl w-full`}
+        className={`bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl max-w-xl w-full`}
       >
-        <h1 className="text-4xl font-extrabold mb-4 leading-tight tracking-wide">
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight tracking-wide">
           🧠 Grammar Quiz
         </h1>
-        <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
+        <p className="text-base sm:text-lg mb-6 text-gray-700 dark:text-gray-300">
           Ready to test your German grammar skills? Start a quiz and see how
           much you’ve learned!
         </p>

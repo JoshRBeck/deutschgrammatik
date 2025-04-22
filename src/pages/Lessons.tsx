@@ -14,14 +14,18 @@ export default function LessonsPage({ isDark }: LessonsPageProps) {
       } p-4 min-h-screen`}
     >
       <div
-        className={`max-w-6xl mx-auto p-8 rounded-2xl shadow-xl ${
+        className={`max-w-6xl mx-auto p-6 sm:p-8 rounded-2xl shadow-xl ${
           isDark
             ? "bg-gray-800/80 text-white"
             : "bg-white/80 backdrop-blur-sm text-gray-800"
         }`}
       >
-        <h1 className="text-3xl font-extrabold mb-4">Lessons</h1>
-        <p className="text-lg mb-6">Select a topic to start learning.</p>
+        <h1 className="text-2xl sm:text-3xl font-extrabold mb-4 text-center">
+          Lessons
+        </h1>
+        <p className="text-base sm:text-lg mb-6 text-center">
+          Select a topic to start learning.
+        </p>
         <LessonsList />
       </div>
     </div>

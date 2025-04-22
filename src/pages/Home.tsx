@@ -12,16 +12,16 @@ export default function Home({ isDark }: HomeProps) {
       }`}
     >
       <div
-        className={`max-w-xl text-center ${
+        className={`w-full max-w-xl text-center ${
           isDark
             ? "dark:bg-gray-800/80 bg-gray-800/80"
             : "bg-white/80 backdrop-blur-sm"
-        } p-8 rounded-2xl shadow-xl`}
+        } p-6 sm:p-8 rounded-2xl shadow-xl`}
       >
-        <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-white mb-4 leading-tight">
           Welcome to Your German Grammar Journey 🇩🇪
         </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6">
           Learn grammar the fun way — one lesson at a time.
         </p>
         <a

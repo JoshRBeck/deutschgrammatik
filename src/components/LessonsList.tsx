@@ -27,15 +27,19 @@ const LessonsList = () => {
   }, []);
 
   return (
-    <div className="p-4 md:p-8 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-extrabold text-violet-800 tracking-tight mb-6 text-center">
+    <div className="p-4 sm:p-6 md:p-8 max-w-7xl mx-auto">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-violet-800 tracking-tight mb-6 text-center">
         German Grammar Lessons
       </h1>
 
       {loading ? (
-        <p className="text-center text-gray-600 text-lg">Loading lessons...</p>
+        <p className="text-center text-gray-600 text-lg sm:text-xl">
+          Loading lessons...
+        </p>
       ) : lessons.length === 0 ? (
-        <p className="text-center text-gray-600 text-lg">No lessons found.</p>
+        <p className="text-center text-gray-600 text-lg sm:text-xl">
+          No lessons found.
+        </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {lessons.map((lesson) => (
