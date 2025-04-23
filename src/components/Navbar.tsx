@@ -53,6 +53,15 @@ export default function Navbar({ isDark, toggleDark }: NavbarProps) {
               Quiz
             </Link>
           </li>
+          <li>
+            <Link
+              to="/TestPage"
+              onClick={toggleMenu}
+              className="block hover:text-violet-600 transition-colors"
+            >
+              Test
+            </Link>
+          </li>
         </ul>
 
         {/* Right side */}
@@ -104,6 +113,15 @@ export default function Navbar({ isDark, toggleDark }: NavbarProps) {
                 className="block hover:text-violet-600 transition-colors"
               >
                 Quiz
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/TestPage"
+                onClick={toggleMenu}
+                className="block hover:text-violet-600 transition-colors"
+              >
+                Test
               </Link>
             </li>
           </ul>

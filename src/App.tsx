@@ -6,6 +6,7 @@ import Lessons from "./pages/Lessons";
 import Quiz from "./pages/Quiz";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import TestPage from "./pages/TestPage";
 
 function App() {
   // Load theme preference from localStorage or use system preference as fallback
@@ -46,6 +47,7 @@ function App() {
           <Route path="/" element={<Home isDark={isDark} />} />
           <Route path="/lessons" element={<Lessons isDark={isDark} />} />
           <Route path="/Quiz" element={<Quiz isDark={isDark} />} />
+          <Route path="/TestPage" element={<TestPage isDark={isDark} />} />
           <Route path="*" element={<NotFound isDark={isDark} />} />
         </Routes>
       </main>
