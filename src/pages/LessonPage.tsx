@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import supabase from "../supabaseClient";
 import MultipleChoice from "../components/LessonComponents/MultipleChoice";
-// import FillInTheBlank from "../components/LessonComponents/FillInTheBlank";
-// import MatchingPairs from "../components/LessonComponents/MatchingPairs";
+import FillInTheBlank from "../components/LessonComponents/FillInTheBlank";
+import MatchingPairs from "../components/LessonComponents/MatchingPairs";
 // import SentenceOrdering from "../components/LessonComponents/SentenceOrdering";
 // import TypingPractice from "../components/LessonComponents/TypingPractice"; // fixed TypingPractice typo
 
@@ -24,13 +24,20 @@ interface LessonBase {
 interface MultipleChoiceContent {
   options: { id: string; text: string; isCorrect: boolean }[];
 }
+interface FillInTheBlankContent {
+  sentence: string;
+  correctAnswer: string;
+}
 
 type Lesson =
   | (LessonBase & {
       exercise_type: "multiple_choice";
       content: MultipleChoiceContent;
     })
-  | (LessonBase & { exercise_type: "fill_in_the_blank"; content: string })
+  | (LessonBase & {
+      exercise_type: "fill_in_the_blank";
+      content: FillInTheBlankContent;
+    })
   | (LessonBase & {
       exercise_type: "matching_pairs";
       content: { [key: string]: string };
@@ -83,25 +90,32 @@ const LessonPage = ({ isDark }: LessonPageProps) => {
             }
           />
         );
-      // case "fill_in_the_blank":
-      //   return (
-      //     <FillInTheBlank
-      //       sentence={lesson.title}
-      //       correctAnswer={lesson.content}
-      //       onAnswer={(isCorrect) =>
-      //         alert(isCorrect ? "✅ Correct!" : "❌ Try again!")
-      //       }
-      //     />
-      //   );
-      // case "matching_pairs":
-      //   return (
-      //     <MatchingPairs
-      //       pairs={lesson.content}
-      //       onComplete={(correct) =>
-      //         alert(correct ? "✅ All matched!" : "❌ Some were wrong!")
-      //       }
-      //     />
-      //   );
+      case "fill_in_the_blank":
+        return (
+          <FillInTheBlank
+            sentence={lesson.content.sentence}
+            correctAnswer={lesson.content.correctAnswer}
+            onAnswer={(isCorrect) =>
+              alert(isCorrect ? "✅ Correct!" : "❌ Try again!")
+            }
+          />
+        );
+
+        case "matching_pairs":
+          // Convert the pairs object into an array of pair objects
+          { const pairArray = Object.entries(lesson.content.pairs).map(([left, right]) => ({
+            left,
+            right,
+          }));
+    
+          return (
+            <MatchingPairs
+              pairs={pairArray}
+              onComplete={(correct) =>
+                alert(correct ? "✅ All matched!" : "❌ Some were wrong!")
+              }
+            />
+          ); }
       // case "sentence_ordering":
       //   return (
       //     <SentenceOrdering
