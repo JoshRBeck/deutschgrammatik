@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Lessons from "./pages/Lessons";
+import LessonPage from "./pages/LessonPage";
 import Quiz from "./pages/Quiz";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home isDark={isDark} />} />
           <Route path="/lessons" element={<Lessons isDark={isDark} />} />
+          <Route path="/lessons/:id" element={<LessonPage isDark={isDark} />} />
           <Route path="/Quiz" element={<Quiz isDark={isDark} />} />
           <Route path="/TestPage" element={<TestPage isDark={isDark} />} />
           <Route path="*" element={<NotFound isDark={isDark} />} />
